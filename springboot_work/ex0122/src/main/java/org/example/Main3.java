@@ -4,8 +4,8 @@ class SuperCls{
     static int count = 0;
 }
 class SubCls extends SuperCls{
-    public void setCount(){
-        SuperCls.count = 100;
+    public static void setCount(){
+        count = 100;
     }
 }
 public class Main3 {
@@ -18,5 +18,10 @@ public class Main3 {
         System.out.println(SuperCls.count);
         System.out.println(SubCls.count);
 
+//        SubCls sc = new SubCls();
+//        sc.setCount();
+        SubCls.setCount();
+        System.out.println(SuperCls.count);
+        System.out.println(SubCls.count);
     }
 }

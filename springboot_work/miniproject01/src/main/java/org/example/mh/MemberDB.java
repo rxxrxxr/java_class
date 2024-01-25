@@ -5,6 +5,7 @@ import org.example.DBINFO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class MemberDB {
     public void insert(Member member) {
@@ -29,4 +30,25 @@ public class MemberDB {
         System.out.println("정상종료");
 
     }
+
+    public boolean findByEmail(String email){
+        try {
+            Connection con = DriverManager.getConnection(DBINFO.url,DBINFO.user,DBINFO.password);
+            PreparedStatement pstmt = con.prepareStatement("SELECT * from member where email=?");
+            pstmt.setString(1,email);
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next()) {
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        // 행이 있으면
+        return true;
+        // 행이 없으면
+        return false;
+    }
+
 }

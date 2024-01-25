@@ -16,12 +16,13 @@ public class Chanwoo {
 			palindrome[i] = word[word.length - i - 1];
 		}
 		if (Arrays.equals(word, palindrome)) {
-			System.out.println(palindrome + " = palindrome 단어입니다");
-		} else
-			System.out.println(palindrome + " = palindrom 단어가 아닙니다");
+			System.out.println(palindrome);
+			System.out.println("palindrome 단어입니다");
+		} else {
+			System.out.println(palindrome);
+			System.out.println("palindrom 단어가 아닙니다");
+		}
 
-		
-		
 		
 		
 		// reverse를 써서 역순으로 만들기
@@ -29,10 +30,12 @@ public class Chanwoo {
 //		String palindrome = st.reverse().toString();
 //		System.out.println(palindrome);
 //
-//		if (string.equals(palindrome))
+//		if (Arrays.equals(word, palindrome)) {
+//			System.out.println(palindrome);
 //			System.out.println("palindrome 단어입니다");
-//		else
+//		} else {
+//			System.out.println(palindrome);
 //			System.out.println("palindrom 단어가 아닙니다");
-
+//		}
 	}
 }

@@ -1,12 +1,11 @@
-package org.example.mh;
+package org.example.member;
 
 import org.example.DBINFO;
-import org.example.util.MyCLI;
 
 import java.sql.*;
 
 public class MemberDB {
-    private MyCLI cli = new MyCLI();
+    private MemberCLI cli = new MemberCLI();
 
     // too many connection...
     // Mysql 실시간 모든 연결...
@@ -92,6 +91,8 @@ public class MemberDB {
             if(rs.next()){
                 member.setRole(rs.getString("role"));
                 return member;
+            }else{
+                System.out.println("로그인실패 이메일과 패스워드를 확인하세요...");
             }
         }catch (Exception e){
             e.printStackTrace();

@@ -1,13 +1,11 @@
 package org.example;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Objects;
 @ToString
 @Getter
-@Setter
 public class Inum implements Comparable {
 
     private int num;

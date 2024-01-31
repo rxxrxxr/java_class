@@ -15,8 +15,8 @@ public class Main11 {
         brr[3] = new Inum(1);
         brr[4] = new Inum(3);
 
-        Arrays.sort(brr);
-//        Arrays.sort(brr,(o1,o2) -> ((Inum)o1).getNum() - ((Inum)o2).getNum());
+//        Arrays.sort(brr);
+        Arrays.sort(brr,(o1,o2) -> ((Inum)o1).getNum() - ((Inum)o2).getNum());
         System.out.println(Arrays.toString(brr));
 
     }

@@ -15,5 +15,12 @@ public class Main5 {
         System.out.println(int1);
         System.out.println(int2);
 
+        System.out.println();
+
+        System.out.println(Integer.max(10,20));
+        System.out.println(Integer.min(10,20));
+        System.out.println(Integer.sum(10,20));
+
+
     }
 }

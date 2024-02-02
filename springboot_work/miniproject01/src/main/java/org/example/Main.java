@@ -17,9 +17,9 @@ public class Main {
             int select = 0;
 
             if (Login.member != null && Login.getRole().equalsIgnoreCase("admin"))
-                select = printMenuAdmin();
+                select = printMenuAdmin(); // 로그인 정보에서 role이 admin일때 admin 메뉴 불러오기
             else
-                select = printMenuUesr();
+                select = printMenuUesr(); // user 일때 user메뉴 불러오기
 
             if (select == 1) {
                 md.insert();

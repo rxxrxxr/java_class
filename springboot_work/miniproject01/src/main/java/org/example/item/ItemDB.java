@@ -23,11 +23,11 @@ public class ItemDB {
             con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.password);
             pstmt = con.prepareStatement("" +
                     "INSERT INTO item " +
-                    "(reg_time, update_time, created_by, modified_by, " +
+                    "(reg_time, update_time " +
                     "item_detail, item_nm, item_sell_status, price, stock_number) " +
                     "VALUES  " +
                     "( NOW(), NOW(), ?, ?, " +
-                    "?, ?, ?, ?, ?)" +
+                    "?, ?, ?)" +
                     "");
             pstmt.setString(1, Login.member.getName());
             pstmt.setString(2, Login.member.getName());
@@ -62,8 +62,6 @@ public class ItemDB {
                     new Item(rs.getLong("item_id"),
                             rs.getString("reg_time"),
                             rs.getString("update_time"),
-                            rs.getString("created_by"),
-                            rs.getString("modified_by"),
                             rs.getString("item_nm"),
                             rs.getString("item_detail"),
                             rs.getString("item_sell_status"),
@@ -71,7 +69,12 @@ public class ItemDB {
                             rs.getInt("stock_number"))
                 );
             }
-            System.out.println(list);
+            for (int i = 0; i<list.size();i++){
+                System.out.println(list.get(i).getItem_id()+"\t");
+                System.out.println(list.get(i).getItem_nm()+"\t");
+                System.out.println(list.get(i).getItem_sell_status()+"\t");
+                System.out.println(list.get(i).getItem_detail()+"\t");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

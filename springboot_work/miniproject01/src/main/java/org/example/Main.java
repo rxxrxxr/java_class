@@ -10,15 +10,16 @@ import org.example.util.Login;
 import java.util.Scanner;
 
 public class Main {
+   public static MemberDB md = new MemberDB();
+    // 상품 관리 DB
+   public static ItemDB id = new ItemDB();
+    // 장바구니 관리 DB
+   public static CartDB cd = new CartDB();
+    // 주문 관리 DB
+   public static OrderDB od = new OrderDB();
+
     public static void main(String[] args) {
         // 회원관리 DB
-        MemberDB md = new MemberDB();
-        // 상품 관리 DB
-        ItemDB id = new ItemDB();
-        // 장바구니 관리 DB
-        CartDB cd = new CartDB();
-        // 주문 관리 DB
-        OrderDB od = new OrderDB();
 
         // 선택
         while (true) {
@@ -58,7 +59,8 @@ public class Main {
                     while (true) {
                         int cartSelect = printMenuCart();
                         if (cartSelect == 1) {
-                            cd.insert();
+                            cd.insert(); // 장바구니 만들기
+                            cd.insertItem(); // 장바구니에 아이템 넣는 로직, 없는 상품을 선택할시 등록 종료 or 상품 보여주면서 계속 등록
                             System.out.println("등록기능 만들어야함");
                         } else if (cartSelect == 5) {
                             System.out.println("장바구니 종료");

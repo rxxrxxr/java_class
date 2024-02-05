@@ -16,19 +16,21 @@ public class Ex02 {
                                        new Car(1200)
         );
 
-        Collections.sort(list);
-        Collections.sort(list,
-                new Comparator<Car>() {
-                    @Override
-                    public int compare(Car o1, Car o2) {
-                        return ((Car)o1).getDisp() - ((Car)o2).getDisp();
-                    }
-                }
-        );
+//        Collections.sort(list); // Collections 정렬
 
-//        Collections.sort(list,
-//                  (a,b) ->
-//                          ((Car)a).getDisp() - ((Car)b).getDisp());
+//        Collections.sort(list, // Comparator 정렬
+//                new Comparator<Car>() {
+//                    @Override
+//                    public int compare(Car o1, Car o2) {
+//                        return ((Car)o2).getDisp() - ((Car)o1).getDisp();
+//                    }
+//                }
+//        );
+
+        Collections.sort(list, // 람다 정렬
+                  (a,b) ->
+                          ((Car)a).getDisp() - ((Car)b).getDisp());
+
         System.out.println(list);
     }
 

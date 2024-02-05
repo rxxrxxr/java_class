@@ -11,7 +11,7 @@ import java.util.List;
 public class Ex01 {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("BOX","TOY","ROBOT","WEAPON");
-        list = new ArrayList<>(list);
+//        list = new ArrayList<>(list);
 
         Collections.sort(list); // 문자열 정렬
 

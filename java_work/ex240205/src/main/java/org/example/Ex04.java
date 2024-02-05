@@ -18,8 +18,8 @@ public class Ex04 {
         System.out.println(copyList);
         System.out.println();
 
-        List<String> tlist = list.stream().filter(s -> s.length() == 5).toList();
-        List<Integer> olist = list.stream().map(s -> s.length()).toList();
+        List<String> tlist = list.stream().filter(s -> s.length() == 5).toList(); // 문자열 길이가 5인 문자만 출력하기
+        List<Integer> olist = list.stream().map(s -> s.length()).toList(); // 각 문자열의 길이를 출력하기
         copyList.set(0, "aaa");
         System.out.println(list);
         System.out.println(copyList);

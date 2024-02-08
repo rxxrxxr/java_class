@@ -13,7 +13,7 @@ namespace WinFormsApp2
         {
             InitializeComponent();
             // 주석 단축키 ctrl + k + c
-            //MessageBox.Show(strConnection);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -21,9 +21,6 @@ namespace WinFormsApp2
             try
             {
                 conn = new OracleConnection(connectionString);
-
-                //cmd = new OracleCommand();
-                //cmd.Connection = conn;
 
                 conn.Open(); // DB 열기
 
@@ -44,7 +41,6 @@ namespace WinFormsApp2
             {
                 Console.WriteLine(ex.StackTrace);
             }
-
 
         }
         private void button2_Click(object sender, EventArgs e)

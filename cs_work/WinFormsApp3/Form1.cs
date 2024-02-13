@@ -60,7 +60,7 @@ namespace WinFormsApp3
 
                 MessageBox.Show("0으로 나눌수 없습니다");
             }
-            
+
         }
     }
 }

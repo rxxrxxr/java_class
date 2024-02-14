@@ -45,7 +45,24 @@ namespace WinFormsApp2
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
 
+            conn = new OracleConnection(connectionString);
+            conn.Open();
+
+            string sql = "select * from emp";
+            DataSet dataSet = new DataSet();
+            OracleDataAdapter dataAdapter = new OracleDataAdapter();
+            dataAdapter.SelectCommand = new OracleCommand(sql, conn);
+
+            dataAdapter.Fill(dataSet);
+
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                ListViewItem item = new ListViewItem(row["ename"].ToString());
+                listView1.Items.Add(item);
+                listBox1.Items.Add(row["ename"].ToString());
+            }
         }
     }
 }

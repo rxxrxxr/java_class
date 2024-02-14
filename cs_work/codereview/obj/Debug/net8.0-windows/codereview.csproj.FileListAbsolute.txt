@@ -1,0 +1,8 @@
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.csproj.AssemblyReference.cache
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.Form1.resources
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.csproj.GenerateResource.cache
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.GeneratedMSBuildEditorConfig.editorconfig
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.AssemblyInfoInputs.cache
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.AssemblyInfo.cs
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.csproj.CoreCompileInputs.cache
+D:\Students\cs_work\codereview\obj\Debug\net8.0-windows\codereview.sourcelink.json

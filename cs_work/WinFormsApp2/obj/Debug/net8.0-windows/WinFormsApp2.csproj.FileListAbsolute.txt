@@ -4,6 +4,10 @@ D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\WinFormsApp2.runtimeco
 D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\WinFormsApp2.dll
 D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\WinFormsApp2.pdb
 D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
+D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.csproj.AssemblyReference.cache
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.Form1.resources
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.csproj.GenerateResource.cache
@@ -18,7 +22,3 @@ D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\refint\WinFormsApp2.dl
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.pdb
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.genruntimeconfig.cache
 D:\Students\cs_work\WinFormsApp2\obj\Debug\net8.0-windows\ref\WinFormsApp2.dll
-D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
-D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
-D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
-D:\Students\cs_work\WinFormsApp2\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll

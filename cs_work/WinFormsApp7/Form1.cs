@@ -14,7 +14,7 @@ namespace WinFormsApp7
             // showDialog - 새창, show - 기존창도 같이 뜸
             Hide();
             MessageBox.Show("form2");
-            new Form2().ShowDialog();
+            new Form2().Show();
             Show();
 
         }

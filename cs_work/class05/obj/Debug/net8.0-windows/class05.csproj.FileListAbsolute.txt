@@ -3,7 +3,6 @@ D:\Students\cs_work\class05\bin\Debug\net8.0-windows\class05.deps.json
 D:\Students\cs_work\class05\bin\Debug\net8.0-windows\class05.runtimeconfig.json
 D:\Students\cs_work\class05\bin\Debug\net8.0-windows\class05.dll
 D:\Students\cs_work\class05\bin\Debug\net8.0-windows\class05.pdb
-D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.Form1.resources
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.csproj.GenerateResource.cache
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.GeneratedMSBuildEditorConfig.editorconfig
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.AssemblyInfoInputs.cache
@@ -15,3 +14,4 @@ D:\Students\cs_work\class05\obj\Debug\net8.0-windows\refint\class05.dll
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.pdb
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.genruntimeconfig.cache
 D:\Students\cs_work\class05\obj\Debug\net8.0-windows\ref\class05.dll
+D:\Students\cs_work\class05\obj\Debug\net8.0-windows\class05.Car.resources

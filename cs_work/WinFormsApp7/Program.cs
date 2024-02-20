@@ -6,7 +6,7 @@ namespace WinFormsApp7
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new Form1());
         }
     }
 }

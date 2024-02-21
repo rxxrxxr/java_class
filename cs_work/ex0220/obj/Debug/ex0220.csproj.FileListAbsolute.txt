@@ -1,0 +1,10 @@
+D:\back_end\ex0220\bin\Debug\ex0220.exe.config
+D:\back_end\ex0220\bin\Debug\ex0220.exe
+D:\back_end\ex0220\bin\Debug\ex0220.pdb
+D:\back_end\ex0220\obj\Debug\ex0220.csproj.AssemblyReference.cache
+D:\back_end\ex0220\obj\Debug\ex0220.Form1.resources
+D:\back_end\ex0220\obj\Debug\ex0220.Properties.Resources.resources
+D:\back_end\ex0220\obj\Debug\ex0220.csproj.GenerateResource.cache
+D:\back_end\ex0220\obj\Debug\ex0220.csproj.CoreCompileInputs.cache
+D:\back_end\ex0220\obj\Debug\ex0220.exe
+D:\back_end\ex0220\obj\Debug\ex0220.pdb

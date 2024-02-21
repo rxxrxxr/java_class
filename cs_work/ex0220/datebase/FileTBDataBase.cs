@@ -5,7 +5,7 @@ namespace ex0220.datebase
 {
     internal class FileTBDataBase
     {
-        private static string connectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.38)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=hr;Password=1234;";
+        private static string connectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=hr;Password=1234;";
         private static OracleConnection con = null;
 
         public static OracleConnection connection()
@@ -59,6 +59,18 @@ namespace ex0220.datebase
                 con.Close();
 
             return list;
+        }
+
+        public void update(string org, string dst)
+        {
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.38)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=hr;Password=1234;";
+            OracleConnection con = new OracleConnection(connectionString);
+            con.Open();
+
+            OracleCommand oracleCommand = new OracleCommand($"update filetb set str = '{updateStr}' where str = '{seletedString}' ", con);
+            oracleCommand.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

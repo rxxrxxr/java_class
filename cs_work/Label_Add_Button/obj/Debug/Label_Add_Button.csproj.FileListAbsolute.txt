@@ -1,0 +1,10 @@
+D:\Student\Students\cs_work\Label_Add_Button\bin\Debug\Label_Add_Button.exe.config
+D:\Student\Students\cs_work\Label_Add_Button\bin\Debug\Label_Add_Button.exe
+D:\Student\Students\cs_work\Label_Add_Button\bin\Debug\Label_Add_Button.pdb
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.csproj.AssemblyReference.cache
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.Form1.resources
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.Properties.Resources.resources
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.csproj.GenerateResource.cache
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.csproj.CoreCompileInputs.cache
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.exe
+D:\Student\Students\cs_work\Label_Add_Button\obj\Debug\Label_Add_Button.pdb

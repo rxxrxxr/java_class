@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Label_Add_Button", "Label_Add_Button.csproj", "{184A30B5-26B8-4A8F-B59B-A6A92292E2AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{184A30B5-26B8-4A8F-B59B-A6A92292E2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184A30B5-26B8-4A8F-B59B-A6A92292E2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184A30B5-26B8-4A8F-B59B-A6A92292E2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184A30B5-26B8-4A8F-B59B-A6A92292E2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0603E245-E022-4843-B6EF-F9245810E4C0}
+	EndGlobalSection
+EndGlobal

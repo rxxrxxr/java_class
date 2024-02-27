@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.searchText = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 277);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
@@ -73,6 +74,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -83,6 +85,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FirstNameTextBox
             // 
@@ -130,13 +133,13 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Gender";
             // 
-            // textBox4
+            // searchText
             // 
-            this.textBox4.Font = new System.Drawing.Font("경기천년제목 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(457, 41);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 23);
-            this.textBox4.TabIndex = 10;
+            this.searchText.Font = new System.Drawing.Font("경기천년제목 Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchText.Location = new System.Drawing.Point(457, 41);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(206, 23);
+            this.searchText.TabIndex = 10;
             // 
             // button4
             // 
@@ -147,6 +150,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "Select";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox1
             // 
@@ -176,7 +180,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.searchText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -205,7 +209,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;

@@ -32,10 +32,10 @@ public class Main {
 
 
         Member member1 = Member.builder()
-                .email("aaa@naver.com")
-                .password("1234")
-                .name("홍길동")
-                .wdate(LocalDateTime.now())
+                    .email("aaa@naver.com")
+                    .password("1234")
+                    .name("홍길동")
+                    .wdate(LocalDateTime.now())
                 .build();
 
         Member member2 = Member.builder()

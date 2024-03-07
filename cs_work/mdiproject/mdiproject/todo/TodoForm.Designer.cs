@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,20 +52,12 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 627);
+            this.panel1.Size = new System.Drawing.Size(358, 627);
             this.panel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 3;
             // 
             // label1
             // 
@@ -83,9 +74,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(300, 0);
+            this.panel2.Location = new System.Drawing.Point(358, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 627);
+            this.panel2.Size = new System.Drawing.Size(698, 627);
             this.panel2.TabIndex = 1;
             // 
             // label2
@@ -252,6 +243,5 @@
         private System.Windows.Forms.DateTimePicker finish_datepicker;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-
     }
 }

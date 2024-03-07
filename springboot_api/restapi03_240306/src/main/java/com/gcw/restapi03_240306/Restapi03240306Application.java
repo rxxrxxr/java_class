@@ -11,5 +11,4 @@ public class Restapi03240306Application {
 		SpringApplication.run(Restapi03240306Application.class, args);
 	}
 
-
 }

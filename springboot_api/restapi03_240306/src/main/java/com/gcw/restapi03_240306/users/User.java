@@ -6,14 +6,13 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-// 테이블 생성
 @Entity
 @ToString
 @Getter
 @Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-// 테이블 이름 변경
 @Table(name = "users")
 public class User {
 
@@ -24,13 +23,13 @@ public class User {
     @Column(length = 50)
     private String username;
 
-    // unique = insert 중복체크
     @Column(length = 50, unique = true)
     private String email;
+
     private String password;
 
-    // .ordinal = male = 0, femaie = 1
-    // .String = male, female
+    // @Enumerated(EnumType.ORDINAL) male = 0 , female = 1
+    // @Enumerated(EnumType.STRING) => Male,feMale
     @Enumerated(EnumType.STRING)
     private Gender gender;
 

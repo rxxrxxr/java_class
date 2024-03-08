@@ -84,6 +84,7 @@ namespace mdiproject.todo
                 content = content_tb.Text,
                 finishdate = finish_datepicker.Value,
             });
+
             if (result) { 
                 MessageBox.Show("입력하였습니다.");
                 title_tb.Text = "";
@@ -114,9 +115,11 @@ namespace mdiproject.todo
             compete_checkbox.Size = new Size(69, 30);
             compete_checkbox.TabIndex = 9;
             compete_checkbox.Text = "완료";
+            // 변수 숨기기
+            compete_checkbox.Tag = todo.idx;
             compete_checkbox.UseVisualStyleBackColor = true;
-            compete_checkbox.Click += compete_checkbox_click;
-            
+            compete_checkbox.Click += Compete_checkbox_Click;
+
             // finishDate_lb_value
             finishDate_lb_value.AutoSize = true;
             finishDate_lb_value.Font = new Font("한컴 고딕", 15F, FontStyle.Bold);
@@ -178,14 +181,13 @@ namespace mdiproject.todo
             else
                 panel4.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 
-            Label namelabel = new Label();
-            namelabel.Text = "할사람 : " + todo.name.ToString();
-            namelabel.AutoSize = true;
-            namelabel.Location = new Point(170, 50);
-            namelabel.Font = new Font("한컴 고딕", 12F);
-            
-            panel4.Controls.Add(namelabel);
+            Label nameLabel = new Label();
+            nameLabel.Text = "할사람 : "+todo.name.ToString();
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(140, 50);
+            nameLabel.Font = new Font("한컴 고딕", 12F);
 
+            panel4.Controls.Add(nameLabel);
             panel4.Controls.Add(compete_checkbox);
             panel4.Controls.Add(finishDate_lb_value);
             panel4.Controls.Add(content_lb_value);
@@ -214,9 +216,10 @@ namespace mdiproject.todo
             #endregion
         }
 
-        private void compete_checkbox_click(object sender, EventArgs e)
+        private void Compete_checkbox_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("눌렀음");
+            CheckBox cb = sender as CheckBox;
+            MessageBox.Show($"눌렀음.....{cb.Tag}");
         }
     }
 }

@@ -5,10 +5,10 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum ErrorCode {
-
-    DUPLICATE(HttpStatus.BAD_REQUEST, "A001", "중복된내용이 있습니다"),
-    NOTFOUND(HttpStatus.NOT_FOUND, "B001", "내용이 없습니다"),
-    TEST(HttpStatus.NOT_ACCEPTABLE, "C001", "Test입니다")
+    DUPLICATE(HttpStatus.BAD_REQUEST,"DUPLICATE","중복된 내용이 있습니다."),
+    NOTFOUND(HttpStatus.NOT_FOUND,"NOTFOUND","해당해는 내용이없습니다."),
+    TEST(HttpStatus.BAD_GATEWAY,"TEST","TEST입니다."),
+    NOTUPDATEEMAIL(HttpStatus.NOT_FOUND,"NOTUPDATE","수정할이메일이없습니다.")
     ;
 
     private HttpStatus httpStatus;

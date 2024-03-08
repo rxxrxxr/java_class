@@ -5,8 +5,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-    // findAll(), save(), deletefyId()
+    // findAll(), save(), findById()
 
-    // select * from user where email 자동생성
+    // select * from user where email = ?;
     public User findByEmail(String email);
 }

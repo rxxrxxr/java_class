@@ -3,6 +3,11 @@ package com.gcw.restapi03_240306.users;
 import com.gcw.restapi03_240306.exception.ErrorCode;
 import com.gcw.restapi03_240306.exception.UsersException;
 import com.gcw.restapi03_240306.exception.UsersException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -15,10 +20,18 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "User-Controller", description = "유저 조회 등록 수정 삭제")
 public class UserController {
 
     private final UserService userService;
 
+    @Operation(summary = "사용자 전체 목록 보기", description = "사용자 전체 정보를 조회할 수 있습니다.")
+    @ApiResponses(
+            {
+                    @ApiResponse(responseCode = "200", description = "ok"),
+                    @ApiResponse(responseCode = "404", description = "사용자들이 없을때 나옵니다."),
+            }
+    )
     @GetMapping("users")
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> list = userService.getAllUsers();
@@ -28,7 +41,9 @@ public class UserController {
     }
 
     @GetMapping("users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id){
+    public ResponseEntity<User> getUserById(
+            @Parameter(description = "조회하고자 하는 사용자 ID 입력하세요", name = "사용자 ID", required = true)
+            @PathVariable Long id){
         System.out.println(id);
 
         User user = userService.getUserById(id);

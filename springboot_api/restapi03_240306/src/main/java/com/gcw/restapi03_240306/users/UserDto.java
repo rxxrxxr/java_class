@@ -2,6 +2,7 @@ package com.gcw.restapi03_240306.users;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,7 @@ public class UserDto {
     @NotBlank
     private String username;
 
+    @Size(min = 10, max = 50)
     private String email;
     private String password;
     private Gender gender;
@@ -25,7 +27,7 @@ public class UserDto {
     @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private LocalDateTime wdate;
 
-    public static User of(UserDto userDto){
+    public static User of(UserDto userDto) {
         User user = new User();
         user.setId(userDto.getId());
         user.setUsername(userDto.getUsername());

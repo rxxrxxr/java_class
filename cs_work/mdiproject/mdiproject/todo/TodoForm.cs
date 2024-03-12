@@ -260,6 +260,7 @@ namespace mdiproject.todo
             {
                 MessageBox.Show("완료");
                 todoSelect();
+                todoSelectComplete();
             }
             else
             {

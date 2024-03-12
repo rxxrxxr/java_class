@@ -2,7 +2,6 @@ package com.gcw.restapi03_240306.users;
 
 import com.gcw.restapi03_240306.exception.ErrorCode;
 import com.gcw.restapi03_240306.exception.UsersException;
-import com.gcw.restapi03_240306.exception.UsersException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -24,6 +24,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @Operation(summary = "사용자 전체 목록 보기", description = "사용자 전체 정보를 조회할 수 있습니다.")
     @ApiResponses(
@@ -79,6 +80,28 @@ public class UserController {
         userService.delete(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("삭제됨");
+    }
+
+    @DeleteMapping("users/all")
+    public ResponseEntity<String> deleteUserAll(@PathVariable Long id){
+        userService.delete();
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("삭제됨");
+    }
+
+    //영속성에 의해서 setter 메서드 사용시  dbUpdate 실행
+    //jakarta 속정 말고 springboot 속성으로 import
+    @Transactional(readOnly = true)
+    @GetMapping("users/tran")
+    public String userstran(){
+
+        User dbUser = userRepository.findById(1L).orElseThrow();
+        //업데이트 구문
+        dbUser.setUsername("김길동");
+        //업데이트 구문
+        dbUser.setEmail("aa@naver.com");
+
+        return "tran";
     }
 
 }

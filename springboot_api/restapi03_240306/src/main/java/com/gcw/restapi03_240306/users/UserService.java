@@ -7,6 +7,7 @@ import com.gcw.restapi03_240306.exception.UsersException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,8 +61,21 @@ public class UserService {
     }
 
     public void delete(Long id) {
+        //해당되는 아이디가 있으면 삭제해야됨
+        //해당되는 아이디가 없으면 삭제할 유저가 없다고 알림
+        Optional<User> dbUser = userRepository.findById(id);
+        if (dbUser.isEmpty()){
+            throw new UsersException(ErrorCode.NOTFOUND);
+        }
 
-        
+        User getUser = dbUser.get();
+        userRepository.delete(dbUser.get());
+//        userRepository.deleteById(id); // 해당되는 id만 조회해서 delete
 
     }
+
+    public void delete(){
+        userRepository.deleteAll();
+    }
+
 }

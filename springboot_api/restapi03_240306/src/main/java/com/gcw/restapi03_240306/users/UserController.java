@@ -20,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("users")
 @Tag(name = "User-Controller", description = "유저 조회 등록 수정 삭제")
 public class UserController {
 
@@ -33,7 +34,7 @@ public class UserController {
                     @ApiResponse(responseCode = "404", description = "사용자들이 없을때 나옵니다."),
             }
     )
-    @GetMapping("users")
+    @GetMapping()
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> list = userService.getAllUsers();
         if( list.size() ==0 )
@@ -41,7 +42,7 @@ public class UserController {
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("users/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<User> getUserById(
             @Parameter(description = "조회하고자 하는 사용자 ID 입력하세요", name = "사용자 ID", required = true)
             @PathVariable Long id){
@@ -52,7 +53,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @PostMapping("users")
+    @PostMapping()
     public ResponseEntity<User> addUser(@RequestBody @Valid UserDto userDto){
         userDto.setWdate(LocalDateTime.now());
 
@@ -64,7 +65,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(dbuser);
     }
 
-    @PutMapping("users")
+    @PutMapping()
     public ResponseEntity<User> updateUser(@RequestBody @Valid UserDto userDto){
         ModelMapper mapper = new ModelMapper();
         User user = mapper.map(userDto,User.class);
@@ -75,14 +76,14 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(dbUser);
     }
 
-    @DeleteMapping("users/{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id){
         userService.delete(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("삭제됨");
     }
 
-    @DeleteMapping("users/all")
+    @DeleteMapping("all")
     public ResponseEntity<String> deleteUserAll(@PathVariable Long id){
         userService.delete();
 
@@ -92,7 +93,7 @@ public class UserController {
     //영속성에 의해서 setter 메서드 사용시  dbUpdate 실행
     //jakarta 속정 말고 springboot 속성으로 import
     @Transactional(readOnly = true)
-    @GetMapping("users/tran")
+    @GetMapping("tran")
     public String userstran(){
 
         User dbUser = userRepository.findById(1L).orElseThrow();

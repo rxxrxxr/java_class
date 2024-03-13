@@ -91,7 +91,7 @@ public class UserController {
     }
 
     //영속성에 의해서 setter 메서드 사용시  dbUpdate 실행
-    //jakarta 속정 말고 springboot 속성으로 import
+    //jakarta 속성 말고 springboot 속성으로 import
     @Transactional(readOnly = true)
     @GetMapping("tran")
     public String userstran(){

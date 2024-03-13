@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Restapi03240306Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Restapi03240306Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Restapi03240306Application.class, args);
+    }
 
 }
 

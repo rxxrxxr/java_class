@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.transaction.UserTransaction;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -27,25 +28,23 @@ public class UserController {
     private final UserService userService;
     private final UserRepository userRepository;
 
+    @GetMapping("usernameemail")
+    public ResponseEntity<List<User>> getAllUserName(@RequestBody UserDto userDto){
+        List<User> list = (List<User>) userRepository.findByUsernameContainingOrEmailContaining(userDto.getUsername(),userDto.getEmail());
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+    }
+
     @Operation(summary = "사용자 전체 목록 보기", description = "사용자 전체 정보를 조회할 수 있습니다.")
-    @ApiResponses(
-            {
-                    @ApiResponse(responseCode = "200", description = "ok"),
-                    @ApiResponse(responseCode = "404", description = "사용자들이 없을때 나옵니다."),
-            }
-    )
+    @ApiResponses({@ApiResponse(responseCode = "200", description = "ok"), @ApiResponse(responseCode = "404", description = "사용자들이 없을때 나옵니다."),})
     @GetMapping()
-    public ResponseEntity<List<User>> getAllUsers(){
+    public ResponseEntity<List<User>> getAllUsers() {
         List<User> list = userService.getAllUsers();
-        if( list.size() ==0 )
-            throw new UsersException(ErrorCode.NOTFOUND);
+        if (list.size() == 0) throw new UsersException(ErrorCode.NOTFOUND);
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<User> getUserById(
-            @Parameter(description = "조회하고자 하는 사용자 ID 입력하세요", name = "사용자 ID", required = true)
-            @PathVariable Long id){
+    public ResponseEntity<User> getUserById(@Parameter(description = "조회하고자 하는 사용자 ID 입력하세요", name = "사용자 ID", required = true) @PathVariable Long id) {
         System.out.println(id);
 
         User user = userService.getUserById(id);
@@ -54,21 +53,21 @@ public class UserController {
     }
 
     @PostMapping()
-    public ResponseEntity<User> addUser(@RequestBody @Valid UserDto userDto){
+    public ResponseEntity<User> addUser(@RequestBody @Valid UserDto userDto) {
         userDto.setWdate(LocalDateTime.now());
 
         ModelMapper mapper = new ModelMapper();
-        User user = mapper.map(userDto,User.class);
+        User user = mapper.map(userDto, User.class);
 
-        User dbuser = userService.regist( user );
+        User dbuser = userService.regist(user);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(dbuser);
     }
 
     @PutMapping()
-    public ResponseEntity<User> updateUser(@RequestBody @Valid UserDto userDto){
+    public ResponseEntity<User> updateUser(@RequestBody @Valid UserDto userDto) {
         ModelMapper mapper = new ModelMapper();
-        User user = mapper.map(userDto,User.class);
+        User user = mapper.map(userDto, User.class);
         user.setWdate(LocalDateTime.now());
 
         User dbUser = userService.updateUser(user);
@@ -77,14 +76,14 @@ public class UserController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable Long id){
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         userService.delete(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("삭제됨");
     }
 
     @DeleteMapping("all")
-    public ResponseEntity<String> deleteUserAll(@PathVariable Long id){
+    public ResponseEntity<String> deleteUserAll(@PathVariable Long id) {
         userService.delete();
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("삭제됨");
@@ -94,7 +93,7 @@ public class UserController {
     //jakarta 속성 말고 springboot 속성으로 import
     @Transactional(readOnly = true)
     @GetMapping("tran")
-    public String userstran(){
+    public String userstran() {
 
         User dbUser = userRepository.findById(1L).orElseThrow();
         //업데이트 구문

@@ -9,10 +9,12 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User,Long> {
     // findAll(), save(), findById() 이런것들을 쓸수있게 된다
 
-
-
     // findByEmail 메서드를 선언, 주어진 이메일에 해당하는 사용자를 조회하여 반환한다
     // Jpa라서 자동으로 쿼리문을 생성한다
     // select * from user where email = ?;
     public User findByEmail(String email);
+
+    // select * from user where username like '%길동%'
+    public User findByUsernameContainingOrEmailContaining(String username, String email);
+
 }

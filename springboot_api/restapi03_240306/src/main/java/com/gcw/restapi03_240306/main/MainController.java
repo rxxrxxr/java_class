@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
-    @Value("${jasypt, encryptor, password}")
-    String password;
+//    @Value("${jasypt, encryptor, password}")
+//    String password;
 
     @GetMapping("/")
     public String hello(){
@@ -21,9 +21,9 @@ public class MainController {
         return "greet "+param;
     }
 
-    @GetMapping("/password")
-    public String password(){
-        return password;
-    }
+//    @GetMapping("/password")
+//    public String password(){
+//        return password;
+//    }
 
 }

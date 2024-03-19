@@ -1,13 +1,18 @@
 package com.example.restapi05.member;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+// MemberService 는 UserDetailsService 이다
+// 그러므로 spring security 에서 자동으로 등록된다
 @Service
 @AllArgsConstructor
-public class MemberService {
+public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
 
@@ -25,4 +30,9 @@ public class MemberService {
         return memberRepository.save(member);
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        System.out.println("일로오나111");
+        return null;
+    }
 }

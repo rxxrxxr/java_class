@@ -22,6 +22,9 @@ spring:
     init:
       mode: always
 
+  jwt:
+    secret: gcw123gcw123
+
 jasypt:
   encryptor:
     password: ${PASSWORD}

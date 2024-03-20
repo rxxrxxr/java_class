@@ -23,7 +23,7 @@ spring:
       mode: always
 
   jwt:
-    secret: gcw123gcw123
+    secret: gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123
 
 jasypt:
   encryptor:

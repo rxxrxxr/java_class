@@ -12,4 +12,6 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     // 해당하는 email 이 있는지 검사하는 메서드
     Optional<Member> findByEmail(String email);
 
+    // select * from member where email =? and password =?
+    Member finByEmailAndPassword(String email, String password);
 }

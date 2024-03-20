@@ -1,0 +1,1 @@
+insert inot member (email, username, password, role) VALUE ('aaa@naver.com', '홍길동', '12341234', 'USER');

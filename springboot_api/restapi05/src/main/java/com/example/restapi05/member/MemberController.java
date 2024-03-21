@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.crypto.ExemptionMechanism;
@@ -18,9 +19,12 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("")
-    public String member() {
+    public String member(Authentication authentication) {
+        Member member = (Member) authentication.getAuthorities();
 
-        return "member";
+        return "getMember email = " + member.getUsername()
+                + " : username : " + member.getUsername()
+                + " : role : " + member.getRole();
     }
 
     @PostMapping("")

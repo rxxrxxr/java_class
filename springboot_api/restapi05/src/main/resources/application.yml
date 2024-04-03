@@ -1,30 +1,48 @@
 spring:
-  application:
-    name : restapi05
+  messages:
+    basename: messages
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/gcw?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: 1234
+    url: jdbc:h2:mem:testdb
+    username: sa
 
   jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQLDialect
-    defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-    generate-ddl: true
     show-sql: true
+    defer-datasource-initialization: true
     properties:
       hibernate:
-        format_sql: true
+        format_sql: true # sql 예쁘게 출력
+        default_batch_fetch_size: 500 # 일대다 컬렉션 조회 시 성능 최적화
+    open-in-view: false # 영속성 컨텍스트의 생존 범위를 트랜잭션 범위로 한정
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
   sql:
     init:
       mode: always
 
-  jwt:
-    secret: gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123gcw123
+
+
+mh:
+ jwt:
+   secret: mh1234mh1234mh1234mh1234mh1234mh1234mh1234mh1234mh1234mh1234
+
 
 jasypt:
   encryptor:
     password: ${PASSWORD}
+
+# application.yml
+
+# 파일 업로드 관련 설정
+multipart:
+  # 최대 업로드 파일 크기 설정 (기본값은 1MB)
+  max-file-size: 10MB
+  # 요청의 최대 크기 설정 (기본값은 10MB)
+  max-request-size: 10MB
+  # 파일 크기를 초과하는 경우 발생할 예외 유형 설정
+  file-size-threshold: 0
+

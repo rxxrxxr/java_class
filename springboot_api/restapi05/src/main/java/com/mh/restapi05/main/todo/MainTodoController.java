@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping("main")
 public class MainTodoController {
 
     @GetMapping("todo")
-    public String todo(){
+    public String todo() {
         return "todo/todo";
     }
 }

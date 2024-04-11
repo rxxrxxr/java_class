@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* border-box로 고정시켜준다 */
+            box-sizing: border-box;
+        }
+
+        /* div > div div 밑에있는 div 태그 */
+        div>div {
+            width: 400px;
+            height: 300px;
+        }
+
+        div>div:nth-child(1) {
+            background-color: red;
+            display: none;
+        }
+
+        div>div:nth-child(2) {
+            background-color: yellow;
+            display: block;
+        }
+
+        div>div:nth-child(3) {
+            background-color: green;
+        }
+
+        div>div:nth-child(4) {
+            background-color: lightblue;
+        }
+
+        div>div:nth-child(5) {
+            background-color: cadetblue;
+        }
+
+        /* inline = 내용만큼 차지한다
+           inline-block = 위아래 여백을 허용한다
+        */
+        h1 {
+            display: inline;
+            background-color: aliceblue;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        h2 {
+            display: inline-block;
+            background-color: aliceblue;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        h3 {
+            display: inline-block;
+            background-color: aliceblue;
+            padding: 1rem;
+            margin: 1rem;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 안에 내용이 없으면 width와 height가 자동설정되지않음 -->
+    <div>
+        <div></div>
+        <div></div>
+        <div>
+            <h1>title</h1>
+            <h1>title</h1>
+            <h1>title</h1>
+            <h1>title</h1>
+        </div>
+        <div>
+            <h2>title</h2>
+            <h2>title</h2>
+            <h2>title</h2>
+        </div>
+        <div>
+            <h3>title</h3>
+            <h3>title</h3>
+            <h3>title</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>

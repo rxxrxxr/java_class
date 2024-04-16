@@ -14,12 +14,14 @@
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title th:text="${'gcwhome - '+menu}"></title>
+  <title th:text="${'mhhome - '+menu}"></title>
 
   <meta name="description" content="" />
 
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -27,6 +29,7 @@
           rel="stylesheet"
   />
 
+  <!-- Icons. Uncomment required icon fonts -->
   <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css" />
 
   <!-- Core CSS -->
@@ -39,6 +42,8 @@
 
   <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Page CSS -->
 
   <!-- Helpers -->
@@ -47,10 +52,6 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="/assets/js/config.js"></script>
-
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -63,9 +64,9 @@
       <div class="app-brand demo">
         <a href="/" class="app-brand-link">
               <span class="app-brand-logo demo">
-                <img src="/images/cat.jpg" style="width: 40px; border-radius: 10px;">
+                <img src="/images/dog.jpg" style="width: 25px; border-radius: 10px;">
               </span>
-          <span class="app-brand-text demo menu-text fw-bolder ms-2">GCWHOME</span>
+          <span class="app-brand-text demo menu-text fw-bolder ms-2">MHHOME</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,6 +80,7 @@
         <!-- Dashboard -->
         <li class="menu-item active">
           <a href="/" class="menu-link">
+            <!--                <i class="menu-icon tf-icons bx bx-home-circle"></i>-->
             <i class="fa fa-cloud" style="margin-right: 1rem;"></i>
             <div data-i18n="Analytics">Dashboard</div>
           </a>
@@ -130,17 +132,17 @@
           </a>
           <ul class="menu-sub">
             <li class="menu-item">
-              <a href="/html/pages-account-settings-account.html" class="menu-link">
+              <a href="../static/html/pages-account-settings-account.html" class="menu-link">
                 <div data-i18n="Account">Account</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/html/pages-account-settings-notifications.html" class="menu-link">
+              <a href="../static/html/pages-account-settings-notifications.html" class="menu-link">
                 <div data-i18n="Notifications">Notifications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/html/pages-account-settings-connections.html" class="menu-link">
+              <a href="../static/html/pages-account-settings-connections.html" class="menu-link">
                 <div data-i18n="Connections">Connections</div>
               </a>
             </li>
@@ -158,12 +160,12 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="/html/auth-register-basic.html" class="menu-link" target="_blank">
+              <a href="../static/html/auth-register-basic.html" class="menu-link" target="_blank">
                 <div data-i18n="Basic">Register</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/html/auth-forgot-password-basic.html" class="menu-link" target="_blank">
+              <a href="../static/html/auth-forgot-password-basic.html" class="menu-link" target="_blank">
                 <div data-i18n="Basic">Forgot Password</div>
               </a>
             </li>
@@ -176,12 +178,12 @@
           </a>
           <ul class="menu-sub">
             <li class="menu-item">
-              <a href="/html/pages-misc-error.html" class="menu-link">
+              <a href="../static/html/pages-misc-error.html" class="menu-link">
                 <div data-i18n="Error">Error</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="/html/pages-misc-under-maintenance.html" class="menu-link">
+              <a href="../static/html/pages-misc-under-maintenance.html" class="menu-link">
                 <div data-i18n="Under Maintenance">Under Maintenance</div>
               </a>
             </li>
@@ -191,7 +193,7 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
         <li class="menu-item">
-          <a href="/html/cards-basic.html" class="menu-link">
+          <a href="../static/html/cards-basic.html" class="menu-link">
             <i class="menu-icon tf-icons bx bx-collection"></i>
             <div data-i18n="Basic">Cards</div>
           </a>
@@ -204,7 +206,7 @@
           </a>
           <ul class="menu-sub">
             <li class="menu-item">
-              <a href="/html/ui-accordion.html" class="menu-link">
+              <a href="../static/html/ui-accordion.html" class="menu-link">
                 <div data-i18n="Accordion">Accordion</div>
               </a>
             </li>
@@ -1100,10 +1102,9 @@
   >Upgrade to Pro</a
   >
 </div>
-
-<!-- Core JS -->
-<!-- build:js assets/vendor/js/core.js -->
-<th:block th:fragment="script">
+<th:block th:fragment="footerscript">
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
   <script src="/assets/vendor/libs/jquery/jquery.js"></script>
   <script src="/assets/vendor/libs/popper/popper.js"></script>
   <script src="/assets/vendor/js/bootstrap.js"></script>
@@ -1124,6 +1125,5 @@
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </th:block>
-
 </body>
 </html>

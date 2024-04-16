@@ -1,7 +1,3 @@
-/**
- * Dashboard Analytics
- */
-
 'use strict';
 
 (function () {
@@ -12,14 +8,12 @@
   axisColor = config.colors.axisColor;
   borderColor = config.colors.borderColor;
 
-  // Total Revenue Report Chart - Bar Chart
-  // --------------------------------------------------------------------
   const totalRevenueChartEl = document.querySelector('#totalRevenueChart'),
     totalRevenueChartOptions = {
       series: [
         {
           name: '2024',
-          data: [12, 0, 5, 30, 1, 20, 80]
+          data: [12, 0, 5, 50, 18, 12, 9]
         },
         {
           name: '2023',

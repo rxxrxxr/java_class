@@ -13,5 +13,4 @@ public class ItemDto {
 
     private String itemNm;
     private int price;
-
 }

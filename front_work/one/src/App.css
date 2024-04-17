@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+     /* 슬라이드 효과를 위한 트랜지션 */
+  /* transition: height 0.3s ease-in-out; */
+    /* 메뉴가 나타나고 사라질 때의 오버플로우를 숨김 */
+  /* overflow: hidden;  */
+
+}
+
+.App-header:hover {
+  height: 50vh; /* 마우스를 올릴 때 헤더의 높이를 늘려서 메뉴를 보여줌 */
+}
+
+main {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  margin-left: 10px;
+}

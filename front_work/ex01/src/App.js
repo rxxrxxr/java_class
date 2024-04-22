@@ -1,30 +1,50 @@
-import logo from "./aaa.jpg";
-import "./App.css";
-import React, { useState } from "react";
+import aaa from './aaa.jpg';
+import './App.css';
+
+import React, { useEffect, useState } from 'react';
 
 function App() {
-  const [itemNm, setItemNm] = useState("");
-  const [price, setPrice] = useState("");
+
+  const [itemNm, setItemNm] = useState('');
+  const [price, setPrice] = useState('');
 
   const newItem = () => {
-    console.log("newItem");
-    fetch("http://localhost:8080/api/item/new", {
-      method: "POST",
+    fetch('http://localhost:8080/api/item/new', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Success", data);
-      });
-  };
+    .then(response => response.json())
+    .then(data => {
+      setItemNm(data.itemNm);
+      setPrice(data.price);
+    });
+  }
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // 'accesstoken' 파라미터 값 가져오기
+    const accessToken = queryParams.get('accessToken');
+    const refeshToken = queryParams.get('refeshToken');
+    
+    if(accessToken && refeshToken) {
+      // 'accesstoken' 파라미터 값이 있을 경우 localStorage에 저장
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('refeshToken', refeshToken);
+      window.location.href = '/';
+    }
+    
+  });
+
   return (
     <div className="App">
+      <h1></h1>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={newItem}>Additem</button>
-        <p>
+        <img src={aaa} className="App-logo" alt="logo" />
+        <button onClick={newItem}>AddItem</button>
+        <p id="item">
           itemNm = {itemNm}
           <br/>
           price = {price}
@@ -35,7 +55,7 @@ function App() {
           // target="_blank"
           rel="noopener noreferrer"
         >
-          kakaoLogin
+          KaKaoLogin
         </a>
       </header>
     </div>

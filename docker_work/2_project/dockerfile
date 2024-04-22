@@ -1,0 +1,15 @@
+# java 가 설치되어있는 이미지를 가져온다
+FROM bellsoft/liberica-openjdk-alpine:17
+
+# CMD ["./gradlew", "clean", "build"]
+
+# VOLUME /tmp
+
+# ARG JAR_FILE=build/libs/*.jar
+
+COPY app.jar app.jar
+
+# 8080 포트 열기
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app.jar"].

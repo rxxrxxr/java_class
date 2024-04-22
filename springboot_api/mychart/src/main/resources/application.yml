@@ -39,6 +39,37 @@ kakao:
     redirect: http://localhost:8080/oauth/kakao/callback
 
 
+toss:
+  client:
+    secret: test_sk_ex6BJqwe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,38 +1,109 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./Menu.css"; // Menu.css 파일 임포트
 
 const Menu = () => {
   const [order, setOrder] = useState([]);
+  const [quantities, setQuantities] = useState({});
 
   const menuItems = [
-    { id: 1, name: 'Original Fried Chicken', price: 10000 },
-    { id: 2, name: 'Spicy Fried Chicken', price: 11000 },
-    { id: 3, name: 'Garlic Fried Chicken', price: 12000 },
-    { id: 4, name: 'Soy Sauce Fried Chicken', price: 12000 },
+    {
+      id: 1,
+      name: "원조 후라이드",
+      price: "18,000",
+      image: "/aaa.jpg",
+    },
   ];
 
   const addToOrder = (menuItem) => {
-    setOrder([...order, menuItem]);
+    const newOrder = [...order];
+    if (menuItem.id in quantities) {
+      quantities[menuItem.id]++;
+    } else {
+      quantities[menuItem.id] = 1;
+    }
+    setOrder(newOrder);
+    setQuantities({ ...quantities });
+  };
+
+  const decreaseQuantity = (itemId) => {
+    const newQuantities = { ...quantities };
+    newQuantities[itemId] = Math.max(0, newQuantities[itemId] - 1);
+    setQuantities(newQuantities);
+  };
+
+  const increaseQuantity = (itemId) => {
+    const newQuantities = { ...quantities };
+    newQuantities[itemId] = (newQuantities[itemId] || 0) + 1;
+    setQuantities(newQuantities);
   };
 
   return (
     <div>
+      <nav>
+        <button>메뉴</button>
+        <button>세트</button>
+        <button>사이드</button>
+        <button>음료</button>
+        <button>소스</button>
+      </nav>
+
       <h2>Menu</h2>
       <ul>
         {menuItems.map((item) => (
           <li key={item.id}>
-            {item.name} - {item.price}원{' '}
-            <button onClick={() => addToOrder(item)}>Add to Order</button>
+            <div className="menuItem">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="menuItem_image"
+              />
+
+              <div className="menuItem_info">
+                <p className="menuItem_name">{item.name}</p>
+                <p className="menuItem_price">{item.price}원</p>
+                <p className="menuItem_note">
+                  * 본 이미지는 실제와 다를 수 있으며 가맹점 상황에 따라
+                  <br />
+                  가격이 상이 할 수 있습니다.
+                </p>
+                <div className="menuItem_controls">
+                  <button
+                    onClick={() => decreaseQuantity(item.id)}
+                    className="menuItem_controlButton"
+                  >
+                    -
+                  </button>
+                  <span className="menuItem_quantity">
+                    {quantities[item.id] || 0}
+                  </span>
+                  <button
+                    onClick={() => increaseQuantity(item.id)}
+                    className="menuItem_controlButton"
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  onClick={() => addToOrder(item)}
+                  className="menuItem_orderButton"
+                >
+                  주문하기
+                </button>
+              </div>
+            </div>
+            <div className="dashedLine"></div>
           </li>
         ))}
       </ul>
-      <h2>Order</h2>
-      <ul>
-        {order.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.price}원
-          </li>
-        ))}
-      </ul>
+      <div className="foodOrigin">
+        <h1>원산지</h1>
+        <tr>닭고기: 국내산</tr>
+      </div>
+      <div className="borderBox">
+        <div className="nutritionInfo">
+          <h1>영양정보</h1>
+        </div>
+      </div>
     </div>
   );
 };

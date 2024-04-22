@@ -35,9 +35,13 @@ public class MainController {
     }
 
     @GetMapping("oauth/kakao/callback")
-    public @ResponseBody String kakaoCallback(String code){
+    public String kakaoCallback(String code){
+
         kakaoService.getKakaoToken(code);
-        return code;
+
+        String redirectTo = "http://localhost:3000"; // 클라이언트 주소
+
+        return "redirect:" + redirectTo;
     }
 
 }

@@ -1,0 +1,159 @@
+.menuItem {
+  display: flex;
+  align-items: center;
+}
+.menuItem_info {
+  text-align: left;
+}
+
+.menuItem_name {
+  font-family: "";
+  font-size: 50px;
+  color: #572a01;
+  font-weight: bold;
+}
+
+.menuItem_price {
+  font-family: "";
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.menuItem_note {
+  opacity: 0.5;
+}
+
+.menuItem_controls {
+  border: 2px solid #ccc;
+  padding: 1px;
+  border-radius: 15px;
+  width: 326px;
+  margin: 100px 0;
+  display: flex;
+  gap: 118px;
+  align-items: center;
+}
+
+.menuItem_controlButton {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menuItem_quantity {
+  font-size: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+}
+.menuItem_orderButton {
+  background-color: #ff8b38;
+  color: white;
+  width: 326px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dashedLine {
+  border-top: 1px dashed #572a01;
+  width: 1300px;
+  margin: 0 auto;
+}
+.foodOrigin {
+  text-align: left;
+  margin: 100px;
+}
+
+nav button {
+  background-color: transparent;
+  border: 1px solid black;
+  outline: none;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 30px;
+}
+.nutritionInfo {
+  text-align: right;
+  margin-right: 200px;
+  
+}
+.borderBox {
+  position: relative;
+  width: 553px;
+  height: 586px;
+  border: 2px solid #572A01;
+  box-sizing: border-box;
+  border-radius: 15px;
+  float: right;
+  margin-bottom: 100px;
+  margin-right: 100px;
+}
+.borderBox::before {
+  content: "";
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.borderBox::after {
+  content: "";
+  position: absolute;
+  top: 162px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.borderBox div:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 243px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.borderBox div:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  top: 324px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.borderBox div:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  top: 405px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.borderBox div:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  top: 486px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}

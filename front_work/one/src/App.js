@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+// import MenuDetail from "./MenuDetail";
 import Menu from "./Menu";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         onMouseEnter={() => setIsMenuVisible(true)}
         onMouseLeave={() => setIsMenuVisible(false)}
       >
-        <h1>Welcome to Chicken Order App</h1>
+        <h1>OneZo Chicken</h1>
       </header>
       <main>
         <Menu />
